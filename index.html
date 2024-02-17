@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <title>
+    <%= title %>
+  </title>
+  <link rel="icon" href="/favicon.ico" />
+  <% if (VITE_MOBILE_CONSOLE=='true' ) { %>
+    <script> (function () { if (!(/vconsole=show/.test(window.location) || localStorage.getItem('vconsole') == 'show')) return; document.write('<script src="//fastly.jsdelivr.net/npm/vconsole/dist/vconsole.min.js"><\/script>'); document.write("<script>var vConsole = new VConsole();<\/script>"); })();</script>
+    <% } %>
+</head>
+
+<body>
+  <div id="app">
+    <style>
+      .app-preloader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background-color: #fff;
+        color: #c8c9cc;
+      }
+
+      .dark .app-preloader {
+        background-color: #17171a;
+        color: rgba(255, 255, 255, .7);
+      }
+    </style>
+    <div class="app-preloader">
+      <div class="app-preloader__label">Loading... </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
